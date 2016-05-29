@@ -101,6 +101,7 @@
 		5CF630F41CFADC0100BEB5D8 /* Demo */ = {
 			isa = PBXGroup;
 			children = (
+				5CF631281CFADC0F00BEB5D8 /* JYPhotoBrowser */,
 				5CF630F81CFADC0100BEB5D8 /* AppDelegate.h */,
 				5CF630F91CFADC0100BEB5D8 /* AppDelegate.m */,
 				5CF630FB1CFADC0100BEB5D8 /* ViewController.h */,
@@ -138,6 +139,14 @@
 				5CF6311C1CFADC0100BEB5D8 /* Info.plist */,
 			);
 			path = DemoUITests;
+			sourceTree = "<group>";
+		};
+		5CF631281CFADC0F00BEB5D8 /* JYPhotoBrowser */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = JYPhotoBrowser;
+			path = ../../JYPhotoBrowser;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
