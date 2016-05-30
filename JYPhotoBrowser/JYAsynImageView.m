@@ -128,13 +128,7 @@
 }
 
 - (CGFloat)maxScale{
-    if (iPhone4) {
-        return 5;
-    }else if (iPhone5s){
-        return 8;
-    }else{
-        return 12;
-    }
+    return 10;
 }
 
 - (CGRect)frameForImageSize:(CGSize)imageSize frameSize:(CGSize)frameSize{
