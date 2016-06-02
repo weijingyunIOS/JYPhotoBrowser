@@ -44,6 +44,9 @@
 }
 
 - (void)redraw{
+    if (self.image == nil) {
+        return;
+    }
     self.fuzzy = NO;
     [[YYTransaction transactionWithTarget:self selector:@selector(contentsNeedUpdated)] commit];
 }
@@ -63,14 +66,20 @@
     // capture current state to display task
     UIImage *image = self.image;
     YYAsyncLayerDisplayTask *task = [YYAsyncLayerDisplayTask new];
+    __block CGRect rect = CGRectZero;
+    __weak typeof(self) weakSelf = self;
     task.willDisplay = ^(CALayer *layer) {
-        CGFloat scale = [self scaleForImageSize:image.size frameSize:layer.bounds.size];
+        
+        rect = [weakSelf frameForImageSize:image.size frameSize:weakSelf.frame.size];
+        layer.bounds = rect;
+        layer.position = weakSelf.center;
+        CGFloat scale = [weakSelf scaleForImageSize:image.size frameSize:layer.frame.size];
         if (scale > 1.0) {
-            layer.contentsScale = self.fuzzy ? scale : 0.5;
+            layer.contentsScale = weakSelf.fuzzy ? scale : 0.2;
         }else{
-            self.fuzzy = YES;
+            weakSelf.fuzzy = YES;
         }
-        layer.backgroundColor = self.backgroundColor.CGColor;
+        layer.backgroundColor = weakSelf.backgroundColor.CGColor;
     };
     
     task.display = ^(CGContextRef context, CGSize size, BOOL(^isCancelled)(void)) {
@@ -79,26 +88,25 @@
         if (isCancelled()) return;
         CGContextScaleCTM(context, 1.0, -1.0);
         if (isCancelled()) return;
-        CGRect rect = [self frameForImageSize:image.size frameSize:size];
-        if (isCancelled()) return;
-        CGContextDrawImage(context, rect, image.CGImage);
+        CGContextDrawImage(context, CGRectMake(0, 0, size.width, size.height), image.CGImage);
         if (isCancelled()) return;
     };
     
     task.didDisplay = ^(CALayer *layer, BOOL finished) {
+
         if (finished) {
             // finished
-            if (!self.fuzzy) {
-                self.fuzzy = YES;
-                [[YYTransaction transactionWithTarget:self selector:@selector(contentsNeedUpdated)] commit];
+            if (!weakSelf.fuzzy) {
+                weakSelf.fuzzy = YES;
+                [[YYTransaction transactionWithTarget:weakSelf selector:@selector(contentsNeedUpdated)] commit];
             }
             if (layer.contentsScale > 1) {
-                self.fuzzy = YES;
+                weakSelf.fuzzy = YES;
             }
         } else {
             // cancelled
-            self.fuzzy = NO;
-            NSLog(@"cancelled");
+            weakSelf.fuzzy = NO;
+            NSLog(@"cancelled display");
         }
     };
     
@@ -106,11 +114,14 @@
 }
 
 - (CGFloat)scaleForImageSize:(CGSize)imageSize frameSize:(CGSize)frameSize{
+    
     CGFloat height = imageSize.height / imageSize.width * frameSize.width;
     if (height <= frameSize.height) {
+        
         CGFloat scale = imageSize.width / frameSize.width;
-        if (scale > [self maxScale]) {
-            scale = [self maxScale];
+        CGFloat kscale = [self limitLenght] / frameSize.width / frameSize.height / scale / scale;
+        if (kscale < 1.0) {
+            scale = scale * kscale;
         }
         return scale;
     }
@@ -118,18 +129,20 @@
     CGFloat width = imageSize.width / imageSize.height * frameSize.height;
     if (width <= frameSize.width) {
          CGFloat scale = imageSize.height / frameSize.height;
-        if (scale > [self maxScale]) {
-            scale = [self maxScale];
+        CGFloat kscale = [self limitLenght] / frameSize.width / frameSize.height / scale / scale;
+        if (kscale < 1.0) {
+            scale = scale * kscale;
         }
         return scale;
     }
-    
+
     return 1.0;
 }
 
-- (CGFloat)maxScale{
-    return 10;
+- (double)limitLenght{
+    return 2048 * 2048 * 1.5;
 }
+
 
 - (CGRect)frameForImageSize:(CGSize)imageSize frameSize:(CGSize)frameSize{
     CGFloat height = imageSize.height / imageSize.width * frameSize.width;
