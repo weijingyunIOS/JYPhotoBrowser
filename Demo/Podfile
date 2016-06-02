@@ -1,1 +1,2 @@
-pod 'YYAsyncLayer'
+pod 'YYAsyncLayer', '~> 1.0'
+pod 'YYWebImage', '~> 1.0.3'
