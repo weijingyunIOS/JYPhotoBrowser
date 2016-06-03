@@ -100,20 +100,19 @@
     
     CGSize boundsSize = self.bounds.size;
     
-    // calculate min/max zoomscale
+    // 计算 min/max zoomscale
     CGFloat xScale = boundsSize.width  / self.imageSize.width;    // the scale needed to perfectly fit the image width-wise
     CGFloat yScale = boundsSize.height / self.imageSize.height;   // the scale needed to perfectly fit the image height-wise
     
-    // fill width if the image and phone are both portrait or both landscape; otherwise take smaller scale
+    // 填补宽高
     BOOL imagePortrait = self.imageSize.height > self.imageSize.width;
     BOOL phonePortrait = boundsSize.height > boundsSize.width;
     CGFloat minScale = imagePortrait == phonePortrait ? xScale : MIN(xScale, yScale);
     
-    // on high resolution screens we have double the pixel density, so we will be seeing every pixel if we limit the
-    // maximum zoom scale to 0.5.
+    // maximum zoom scale to 0.5. 考虑高分辨率屏幕
     CGFloat maxScale = 1.0 / [[UIScreen mainScreen] scale];
     
-    // don't let minScale exceed maxScale. (If the image is smaller than the screen, we don't want to force it to be zoomed.)
+    // 不要让minScale超过maxScale。(如果图像比屏幕小,我们不想放大。)
     if (minScale > maxScale) {
         minScale = maxScale;
     }
