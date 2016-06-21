@@ -11,5 +11,7 @@
 @interface JYImageScrollView : UIScrollView
 
 - (void)setImage:(UIImage *)aImage;
+- (void)setImageWithURL:(NSURL *)url;
+- (void)setImageWithURL:(NSURL *)url placeholderImage:(UIImage *)placeholder;
 
 @end

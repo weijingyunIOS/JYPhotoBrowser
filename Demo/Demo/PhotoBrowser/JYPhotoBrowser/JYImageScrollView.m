@@ -7,6 +7,10 @@
 //
 
 #import "JYImageScrollView.h"
+#import "JYIndicatorView.h"
+#import <YYWebImage/YYWebImage.h>
+
+#define kAPPSize [UIScreen mainScreen].bounds.size
 
 @interface JYImageScrollView ()<UIScrollViewDelegate>
 
@@ -14,6 +18,9 @@
 @property (nonatomic, assign) CGSize imageSize;
 @property (nonatomic, assign) CGPoint pointToCenterAfterResize;
 @property (nonatomic, assign) CGFloat scaleToRestoreAfterResize;
+
+// 关于指示器
+@property (nonatomic, strong) JYIndicatorView *indicatorView;
 
 @end
 
@@ -72,6 +79,33 @@
 }
 
 #pragma mark - 显示图片
+- (void)setImageWithURL:(NSURL *)url{
+    UIImage *image = [UIImage imageNamed:@"JYImageScrollView_placeholder"];
+    [self setImageWithURL:url placeholderImage:image];
+}
+
+- (void)setImageWithURL:(NSURL *)url placeholderImage:(UIImage *)placeholder{
+    
+    __weak typeof(self)weakSelf = self;
+    [self.zoomView yy_setImageWithURL:url placeholder:placeholder options:kNilOptions progress:^(NSInteger receivedSize, NSInteger expectedSize) {
+        
+        weakSelf.indicatorView.progress = receivedSize / (expectedSize * 1.0f);
+        
+    } transform:nil completion:^(UIImage * _Nullable image, NSURL * _Nonnull url, YYWebImageFromType from, YYWebImageStage stage, NSError * _Nullable error) {
+        
+        if (stage != YYWebImageStageFinished) { // 未完成
+            return;
+        }
+        [weakSelf.indicatorView removeFromSuperview];
+        weakSelf.indicatorView = nil;
+        
+        if (!error) {
+            
+        }
+        
+    }];
+}
+
 - (void)setImage:(UIImage *)aImage{
     [self displayImage:aImage];
 }
@@ -186,6 +220,18 @@
 - (UIView *)viewForZoomingInScrollView:(UIScrollView *)scrollView{
     
     return self.zoomView;
+}
+
+#pragma mark - 懒加载
+- (JYIndicatorView *)indicatorView{
+    if (!_indicatorView) {
+    
+        _indicatorView = [[JYIndicatorView alloc] init];
+        _indicatorView.style = JYIndicatorStyleLoopDiagram;
+        _indicatorView.center = CGPointMake(kAPPSize.width * 0.5, kAPPSize.height * 0.5);
+        [self addSubview:_indicatorView];
+    }
+    return _indicatorView;
 }
 
 @end
