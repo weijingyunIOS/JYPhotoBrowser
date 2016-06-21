@@ -18,6 +18,7 @@
 		5CF95A421D199C8D00813769 /* JYAsynImageView.m in Sources */ = {isa = PBXBuildFile; fileRef = 5CF95A3D1D199C8D00813769 /* JYAsynImageView.m */; };
 		5CF95A431D199C8D00813769 /* JYImageScrollView.m in Sources */ = {isa = PBXBuildFile; fileRef = 5CF95A3F1D199C8D00813769 /* JYImageScrollView.m */; };
 		5CF95A441D199C8D00813769 /* JYPhotoViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5CF95A411D199C8D00813769 /* JYPhotoViewController.m */; };
+		5CF95A471D199D3500813769 /* JYIndicatorView.m in Sources */ = {isa = PBXBuildFile; fileRef = 5CF95A461D199D3500813769 /* JYIndicatorView.m */; };
 		66EAB0F3E1FD71D136FEDC69 /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 5AA2B3722342C53FD3596504 /* libPods.a */; };
 /* End PBXBuildFile section */
 
@@ -63,6 +64,8 @@
 		5CF95A3F1D199C8D00813769 /* JYImageScrollView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JYImageScrollView.m; sourceTree = "<group>"; };
 		5CF95A401D199C8D00813769 /* JYPhotoViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JYPhotoViewController.h; sourceTree = "<group>"; };
 		5CF95A411D199C8D00813769 /* JYPhotoViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JYPhotoViewController.m; sourceTree = "<group>"; };
+		5CF95A451D199D3500813769 /* JYIndicatorView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JYIndicatorView.h; sourceTree = "<group>"; };
+		5CF95A461D199D3500813769 /* JYIndicatorView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JYIndicatorView.m; sourceTree = "<group>"; };
 		CEFD6311EB67F936DD1F6687 /* Pods.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.release.xcconfig; path = "Pods/Target Support Files/Pods/Pods.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -160,9 +163,9 @@
 		5CF95A3A1D199C8D00813769 /* PhotoBrowser */ = {
 			isa = PBXGroup;
 			children = (
-				5CF95A3B1D199C8D00813769 /* JYPhotoBrowser */,
 				5CF95A401D199C8D00813769 /* JYPhotoViewController.h */,
 				5CF95A411D199C8D00813769 /* JYPhotoViewController.m */,
+				5CF95A3B1D199C8D00813769 /* JYPhotoBrowser */,
 			);
 			path = PhotoBrowser;
 			sourceTree = "<group>";
@@ -170,6 +173,8 @@
 		5CF95A3B1D199C8D00813769 /* JYPhotoBrowser */ = {
 			isa = PBXGroup;
 			children = (
+				5CF95A451D199D3500813769 /* JYIndicatorView.h */,
+				5CF95A461D199D3500813769 /* JYIndicatorView.m */,
 				5CF95A3C1D199C8D00813769 /* JYAsynImageView.h */,
 				5CF95A3D1D199C8D00813769 /* JYAsynImageView.m */,
 				5CF95A3E1D199C8D00813769 /* JYImageScrollView.h */,
@@ -378,6 +383,7 @@
 			files = (
 				5CF95A421D199C8D00813769 /* JYAsynImageView.m in Sources */,
 				5CF95A431D199C8D00813769 /* JYImageScrollView.m in Sources */,
+				5CF95A471D199D3500813769 /* JYIndicatorView.m in Sources */,
 				5CF95A441D199C8D00813769 /* JYPhotoViewController.m in Sources */,
 				5CF630FD1CFADC0100BEB5D8 /* ViewController.m in Sources */,
 				5CF630FA1CFADC0100BEB5D8 /* AppDelegate.m in Sources */,
