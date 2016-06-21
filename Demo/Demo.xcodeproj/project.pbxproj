@@ -7,9 +7,6 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		5C042F0F1CFC4F2600E71C96 /* JYAsynImageView.m in Sources */ = {isa = PBXBuildFile; fileRef = 5C042F0E1CFC4F2600E71C96 /* JYAsynImageView.m */; };
-		5C8A48411D01340F005B332A /* JYPhotoViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5C8A48401D01340F005B332A /* JYPhotoViewController.m */; };
-		5CBE17981D0045CF00195165 /* JYImageScrollView.m in Sources */ = {isa = PBXBuildFile; fileRef = 5CBE17971D0045CF00195165 /* JYImageScrollView.m */; };
 		5CF630F71CFADC0100BEB5D8 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 5CF630F61CFADC0100BEB5D8 /* main.m */; };
 		5CF630FA1CFADC0100BEB5D8 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 5CF630F91CFADC0100BEB5D8 /* AppDelegate.m */; };
 		5CF630FD1CFADC0100BEB5D8 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5CF630FC1CFADC0100BEB5D8 /* ViewController.m */; };
@@ -18,6 +15,9 @@
 		5CF631051CFADC0100BEB5D8 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5CF631031CFADC0100BEB5D8 /* LaunchScreen.storyboard */; };
 		5CF631101CFADC0100BEB5D8 /* DemoTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 5CF6310F1CFADC0100BEB5D8 /* DemoTests.m */; };
 		5CF6311B1CFADC0100BEB5D8 /* DemoUITests.m in Sources */ = {isa = PBXBuildFile; fileRef = 5CF6311A1CFADC0100BEB5D8 /* DemoUITests.m */; };
+		5CF95A421D199C8D00813769 /* JYAsynImageView.m in Sources */ = {isa = PBXBuildFile; fileRef = 5CF95A3D1D199C8D00813769 /* JYAsynImageView.m */; };
+		5CF95A431D199C8D00813769 /* JYImageScrollView.m in Sources */ = {isa = PBXBuildFile; fileRef = 5CF95A3F1D199C8D00813769 /* JYImageScrollView.m */; };
+		5CF95A441D199C8D00813769 /* JYPhotoViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5CF95A411D199C8D00813769 /* JYPhotoViewController.m */; };
 		66EAB0F3E1FD71D136FEDC69 /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 5AA2B3722342C53FD3596504 /* libPods.a */; };
 /* End PBXBuildFile section */
 
@@ -41,12 +41,6 @@
 /* Begin PBXFileReference section */
 		27CF35977FCC77E64F18FD53 /* Pods.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.debug.xcconfig; path = "Pods/Target Support Files/Pods/Pods.debug.xcconfig"; sourceTree = "<group>"; };
 		5AA2B3722342C53FD3596504 /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
-		5C042F0D1CFC4F2600E71C96 /* JYAsynImageView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JYAsynImageView.h; sourceTree = "<group>"; };
-		5C042F0E1CFC4F2600E71C96 /* JYAsynImageView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JYAsynImageView.m; sourceTree = "<group>"; };
-		5C8A483F1D01340F005B332A /* JYPhotoViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JYPhotoViewController.h; sourceTree = "<group>"; };
-		5C8A48401D01340F005B332A /* JYPhotoViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JYPhotoViewController.m; sourceTree = "<group>"; };
-		5CBE17961D0045CF00195165 /* JYImageScrollView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JYImageScrollView.h; sourceTree = "<group>"; };
-		5CBE17971D0045CF00195165 /* JYImageScrollView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JYImageScrollView.m; sourceTree = "<group>"; };
 		5CF630F21CFADC0100BEB5D8 /* Demo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Demo.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		5CF630F61CFADC0100BEB5D8 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		5CF630F81CFADC0100BEB5D8 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
@@ -63,6 +57,12 @@
 		5CF631161CFADC0100BEB5D8 /* DemoUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = DemoUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		5CF6311A1CFADC0100BEB5D8 /* DemoUITests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = DemoUITests.m; sourceTree = "<group>"; };
 		5CF6311C1CFADC0100BEB5D8 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		5CF95A3C1D199C8D00813769 /* JYAsynImageView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JYAsynImageView.h; sourceTree = "<group>"; };
+		5CF95A3D1D199C8D00813769 /* JYAsynImageView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JYAsynImageView.m; sourceTree = "<group>"; };
+		5CF95A3E1D199C8D00813769 /* JYImageScrollView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JYImageScrollView.h; sourceTree = "<group>"; };
+		5CF95A3F1D199C8D00813769 /* JYImageScrollView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JYImageScrollView.m; sourceTree = "<group>"; };
+		5CF95A401D199C8D00813769 /* JYPhotoViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JYPhotoViewController.h; sourceTree = "<group>"; };
+		5CF95A411D199C8D00813769 /* JYPhotoViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JYPhotoViewController.m; sourceTree = "<group>"; };
 		CEFD6311EB67F936DD1F6687 /* Pods.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.release.xcconfig; path = "Pods/Target Support Files/Pods/Pods.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -117,7 +117,7 @@
 		5CF630F41CFADC0100BEB5D8 /* Demo */ = {
 			isa = PBXGroup;
 			children = (
-				5CF631281CFADC0F00BEB5D8 /* JYPhotoBrowser */,
+				5CF95A3A1D199C8D00813769 /* PhotoBrowser */,
 				5CF630F81CFADC0100BEB5D8 /* AppDelegate.h */,
 				5CF630F91CFADC0100BEB5D8 /* AppDelegate.m */,
 				5CF630FB1CFADC0100BEB5D8 /* ViewController.h */,
@@ -157,18 +157,25 @@
 			path = DemoUITests;
 			sourceTree = "<group>";
 		};
-		5CF631281CFADC0F00BEB5D8 /* JYPhotoBrowser */ = {
+		5CF95A3A1D199C8D00813769 /* PhotoBrowser */ = {
 			isa = PBXGroup;
 			children = (
-				5C042F0D1CFC4F2600E71C96 /* JYAsynImageView.h */,
-				5C042F0E1CFC4F2600E71C96 /* JYAsynImageView.m */,
-				5CBE17961D0045CF00195165 /* JYImageScrollView.h */,
-				5CBE17971D0045CF00195165 /* JYImageScrollView.m */,
-				5C8A483F1D01340F005B332A /* JYPhotoViewController.h */,
-				5C8A48401D01340F005B332A /* JYPhotoViewController.m */,
+				5CF95A3B1D199C8D00813769 /* JYPhotoBrowser */,
+				5CF95A401D199C8D00813769 /* JYPhotoViewController.h */,
+				5CF95A411D199C8D00813769 /* JYPhotoViewController.m */,
 			);
-			name = JYPhotoBrowser;
-			path = ../../JYPhotoBrowser;
+			path = PhotoBrowser;
+			sourceTree = "<group>";
+		};
+		5CF95A3B1D199C8D00813769 /* JYPhotoBrowser */ = {
+			isa = PBXGroup;
+			children = (
+				5CF95A3C1D199C8D00813769 /* JYAsynImageView.h */,
+				5CF95A3D1D199C8D00813769 /* JYAsynImageView.m */,
+				5CF95A3E1D199C8D00813769 /* JYImageScrollView.h */,
+				5CF95A3F1D199C8D00813769 /* JYImageScrollView.m */,
+			);
+			path = JYPhotoBrowser;
 			sourceTree = "<group>";
 		};
 		D75B2C6F334403C861D71E3A /* Frameworks */ = {
@@ -369,9 +376,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				5C042F0F1CFC4F2600E71C96 /* JYAsynImageView.m in Sources */,
-				5CBE17981D0045CF00195165 /* JYImageScrollView.m in Sources */,
-				5C8A48411D01340F005B332A /* JYPhotoViewController.m in Sources */,
+				5CF95A421D199C8D00813769 /* JYAsynImageView.m in Sources */,
+				5CF95A431D199C8D00813769 /* JYImageScrollView.m in Sources */,
+				5CF95A441D199C8D00813769 /* JYPhotoViewController.m in Sources */,
 				5CF630FD1CFADC0100BEB5D8 /* ViewController.m in Sources */,
 				5CF630FA1CFADC0100BEB5D8 /* AppDelegate.m in Sources */,
 				5CF630F71CFADC0100BEB5D8 /* main.m in Sources */,
@@ -519,6 +526,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				INFOPLIST_FILE = Demo/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = yunyunxiao.Demo;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -531,6 +539,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				INFOPLIST_FILE = Demo/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = yunyunxiao.Demo;
 				PRODUCT_NAME = "$(TARGET_NAME)";
