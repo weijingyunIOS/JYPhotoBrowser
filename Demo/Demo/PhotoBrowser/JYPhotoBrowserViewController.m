@@ -17,11 +17,21 @@
 
 @implementation JYPhotoBrowserViewController
 
+- (void)viewWillAppear:(BOOL)animated{
+    [super viewWillAppear:animated];
+    self.navigationController.navigationBar.hidden = YES;
+}
+
+- (void)viewDidDisappear:(BOOL)animated{
+    [super viewDidDisappear:animated];
+    self.navigationController.navigationBar.hidden = NO;
+}
+
 - (void)viewDidLoad {
     [super viewDidLoad];
-    self.view.backgroundColor = [UIColor whiteColor];
+    self.view.backgroundColor = [UIColor blackColor];
     CGRect rect = [UIScreen mainScreen].bounds;
-    self.pageViewController.view.frame = CGRectMake(0, 0, rect.size.width, rect.size.height);
+    self.pageViewController.view.frame = CGRectMake(0, 0, rect.size.width + 20, rect.size.height);
     JYSinglePhotoViewController *initialViewController = [self viewControllerAtIndex:self.currentIndex];
     NSArray *viewControllers = nil;
     if (initialViewController) {
