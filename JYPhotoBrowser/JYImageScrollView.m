@@ -72,6 +72,10 @@
 }
 
 #pragma mark - 显示图片
+- (void)setImage:(UIImage *)aImage{
+    [self displayImage:aImage];
+}
+
 - (void)displayImage:(UIImage *)image{
     
     // clear the previous image

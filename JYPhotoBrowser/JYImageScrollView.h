@@ -10,4 +10,6 @@
 
 @interface JYImageScrollView : UIScrollView
 
+- (void)setImage:(UIImage *)aImage;
+
 @end
