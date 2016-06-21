@@ -86,6 +86,7 @@
 
 - (void)setImageWithURL:(NSURL *)url placeholderImage:(UIImage *)placeholder{
     
+    [self displayImage:placeholder];
     __weak typeof(self)weakSelf = self;
     [self.zoomView yy_setImageWithURL:url placeholder:placeholder options:kNilOptions progress:^(NSInteger receivedSize, NSInteger expectedSize) {
         
@@ -98,7 +99,7 @@
         }
         [weakSelf.indicatorView removeFromSuperview];
         weakSelf.indicatorView = nil;
-        
+        [weakSelf displayImage:image];
         if (!error) {
             
         }
@@ -131,7 +132,6 @@
     self.imageSize = imageSize;
     self.contentSize = imageSize;
     [self setMaxMinZoomScalesForCurrentBounds];
-    self.zoomScale = self.minimumZoomScale;
 }
 
 - (void)setMaxMinZoomScalesForCurrentBounds {
@@ -152,7 +152,12 @@
     
     // 不要让minScale超过maxScale。(如果图像比屏幕小,我们不想放大。)
     if (minScale > maxScale) {
+        CGFloat temp = minScale;
         minScale = maxScale;
+        maxScale = temp;
+        self.zoomScale = maxScale;
+    }else{
+        self.zoomScale = minScale * 0.99;
     }
     
     self.maximumZoomScale = maxScale;

@@ -42,7 +42,9 @@
 - (JYImageScrollView *)imgView{
     
     if (!_imgView) {
-        _imgView = [[JYImageScrollView alloc] initWithFrame:CGRectMake(0., 0., self.view.frame.size.width, self.view.frame.size.height)];
+        
+        CGRect rect = [UIScreen mainScreen].bounds;
+        _imgView = [[JYImageScrollView alloc] initWithFrame:CGRectMake(0., 0., rect.size.width, rect.size.height)];
         [self.view addSubview:_imgView];
     }
     return _imgView;
